@@ -1,3 +1,6 @@
+# https://www.hackerrank.com/challenges/array-left-rotation/problem
+
+
 import math
 import os
 import random
@@ -17,5 +20,4 @@ if __name__ == '__main__':
 
 
     for i in (a[d:] + a[0:d]):
-
         print(i, end = " ")
