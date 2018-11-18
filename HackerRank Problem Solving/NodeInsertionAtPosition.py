@@ -19,20 +19,12 @@ class SinglyLinkedList:
         self.tail = node
 
 
-#  Function for inserting nodes
-def insertNodeAtPosition(head, data, position):
-    if head == None:
-        head = SinglyLinkedListNode(data)
-        return head
-    else:
-        curr = head
-        for i in range(position-1):
-            curr = curr.next
-        next_node = curr.next
-        curr.next = SinglyLinkedListNode(data)
-        curr.next.next = next_node
-
-        return head
+#  Function for deleting the node
+def deleteNode(head, position):
+    if position == 0
+        return head.next
+    head.next = deleteNode(head.next, position-1);
+    return head
 
 
 llist_count = int(input()) # Number of nodes
@@ -47,7 +39,7 @@ data = int(input())
 
 position = int(input())
 
-llist_head = insertNodeAtPosition(llist.head, data, position)
+llist_head = deleteNode(llist.head, data, position)
 
 # Printing the elements of the linked list
 while(llist_head != None):
