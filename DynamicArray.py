@@ -17,18 +17,15 @@ def dynamicArray(n, queries):
         print(i)
 
 
+nq = input().rstrip().split()
 
-if __name__ == '__main__':
+n = int(nq[0])
 
-    nq = input().rstrip().split()
+q = int(nq[1])
 
-    n = int(nq[0])
+queries = []
 
-    q = int(nq[1])
+for _ in range(q):
+    queries.append(list(map(int, input().rstrip().split())))
 
-    queries = []
-
-    for _ in range(q):
-        queries.append(list(map(int, input().rstrip().split())))
-
-    result = dynamicArray(n, queries)
+result = dynamicArray(n, queries)
