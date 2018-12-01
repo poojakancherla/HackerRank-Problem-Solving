@@ -1,45 +1,19 @@
-class SinglyLinkedListNode:
-    def __init__(self, node_data): # Method for creating a node
-        self.data = node_data
-        self.next = None
+import LinkedListBase as l
 
-class SinglyLinkedList:
-    def __init__(self):
-        self.head = None
-
-    def insert_node(self, node_data):
-        node = SinglyLinkedListNode(node_data)
-
-        if not self.head:
-            self.head = node
-        else:
-            self.tail.next = node
-
-
-        self.tail = node
-
-def length(head):
-    counter = 0
-
-    if head:
-        curr = head
-
-        while(curr):
-            counter += 1
-            curr = curr.next
-
-    return counter
-
-
-#  Function for comparing the two lists
+# Function to compare the two linked lists
 def compare_lists(llist1, llist2):
 
-    l1 = length(llist1)
-    l2 = length(llist2)
+    l1 = l.length(llist1)
+    l2 = l.length(llist2)
 
+ # if the linked lists are of different lengths, directly return 0
     if l1 != l2:
         return 0
 
+ # compare the heads of both lists
+ # if equal, point to the next nodes in both lists
+ # keep shifting the pointers to the next nodes until the end of the lists
+ # if nodes not equal, return 0
     while llist1:
         if llist1.data != llist2.data:
             return 0
@@ -48,26 +22,22 @@ def compare_lists(llist1, llist2):
     return 1
 
 
+tests = int(input()) # no. of test cases
 
-tests = int(input()) # No. of test cases
+for tests_itr in range(tests): # for each test case, create list1 and list2
 
-for tests_itr in range(tests):
-    llist1_count = int(input())
-
-    llist1 = SinglyLinkedList() # Defining the head of linked list 1
-
-    for _ in range(llist1_count): # Inserting the nodes into linked list 1
+    llist1_count = int(input()) # no. of nodes in list1
+    llist1 = l.SinglyLinkedList() # creating head of list1
+    for _ in range(llist1_count): # inserting the nodes of list1
         llist1_item = int(input())
         llist1.insert_node(llist1_item)
 
-    llist2_count = int(input())
-
-    llist2 = SinglyLinkedList() # Defining the head of linked list 2
-
-    for _ in range(llist2_count): # Inserting the nodes into linked list 2
+    llist2_count = int(input()) # no. of nodes in list2
+    llist2 = l.SinglyLinkedList() # creating head of list2
+    for _ in range(llist2_count): # inserting the nodes of list2
         llist2_item = int(input())
         llist2.insert_node(llist2_item)
 
-    result = compare_lists(llist1.head, llist2.head) # Passing the heads of the linked lists
+    result = compare_lists(llist1.head, llist2.head)
 
     print(result)
