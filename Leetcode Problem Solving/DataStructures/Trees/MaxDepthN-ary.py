@@ -10,12 +10,12 @@
 def maxDepth(root):
         if not root: return 0
 
-        def dfs(root):
+        def findDepth(root):
             if not root.children: return 1
-            depths = [maxDepth(child) for child in root.children]
-            return max(depths) + 1
+            maxChildDepth = max([findDepth(child) for child in root.children])
+            return maxChildDepth + 1
 
-        return dfs(root)
+        return findDepth(root)
 
 
 ###  Iterative Algorithm using BFS ###
