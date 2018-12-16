@@ -1,5 +1,12 @@
 from BaseBST import genTree
 
+# getLeaf method checks if there is a root. If there is a root and if doesn't have have any children, then it is the leaf node
+# This leaf as added to the leaves array
+# If the root node has a left child, then we iteraitively check if it is the leaf nodeand then append it to the list
+# Same process if the root has a right child
+# Return the leaves array
+# Now compare the getLeaves method for both the trees and return true or false 
+
 def leafSimilar(root1, root2):
     def getLeaf(root):
         if not root: return None
@@ -12,17 +19,6 @@ def leafSimilar(root1, root2):
 
         return leaves
 
-
-
-
-    # leaves = []
-    # getLeaf(root1)
-    # treeLeaves1 = leaves
-    # leaves = []
-    # getLeaf(root2)
-    # treeLeaves2 = leaves
-
-    # print(treeLeaves1, treeLeaves2)
     return(getLeaf(root1) == getLeaf(root2))
 
 
