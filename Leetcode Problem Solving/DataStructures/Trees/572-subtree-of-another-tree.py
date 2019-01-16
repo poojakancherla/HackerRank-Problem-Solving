@@ -17,6 +17,7 @@ def isSubtree(tree, subtree):
                match(tree.right, subtree.right)
 
     def dfs(tree, subtree):
+        if not s and not t: return True
         if not tree: return False
         if match(tree, subtree): return True
         return dfs(tree.left, subtree) or dfs(tree.right, subtree)
